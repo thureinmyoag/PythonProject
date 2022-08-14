@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gallery</title>
-</head>
-<body>
-    <li><a href="{% url 'artists' %}">Artist</a></li>
+{% extends "base_generic.html" %}
 
-    <h1>Hello This is art selling website created by Thurein!</h1>
-</body>
-</html>
+{% block content %}
+<h1>Art Gallery Home</h1>
+<p>Welcome to ArtGallery, a website developed by <em>Thurein and Mhu Mhu</em>!</p>
+<h2>Dynamic content</h2>
+
+
+<div class="ImageGallery>
+    <div class="ImageGallery-imageWrapper-3536218827"><img class="ImageGallery"
+            src="">
+    </div>
+</div>
+
+{% endblock %}
