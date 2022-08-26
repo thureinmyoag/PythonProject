@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Genre,Arts,Artist
+from .models import Genre,Artwork,Artist
 
 admin.site.register(Genre)
-admin.site.register(Arts)
+admin.site.register(Artwork)
 admin.site.register(Artist)

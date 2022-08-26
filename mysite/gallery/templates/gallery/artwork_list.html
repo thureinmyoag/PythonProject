@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Artwork List</h1>
+  {% if artwork_list %}
+  <ul>
+  
+    <div class="row"> 
+      {% for artwork in artwork_list %}
+      <div class="col-6 border p-4 mb-4 border-bg-light shadow">
+        <img src="{{ artwork.image.url }}" class="card-img-top"
+          alt="Artwork photo..">
+        <div class="card-body">
+          <h5 class="card-title"><a href=>{{ artwork.title }}</a></h5>
+          <p class="card-text">{{artwork.summary}}</p>
+          <a href="#" class="btn btn-primary">View the Detail</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+      <!-- <li>
+        <a href=>{{ artwork.title }}</a> ({{artwork.author}})
+      </li> -->
+    
+  </ul>
+  {% else %}
+    <p>There are no artworks in the library sorry .</p>
+  {% endif %}
+{% endblock %}

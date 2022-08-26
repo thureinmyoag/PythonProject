@@ -5,7 +5,11 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 
-
-urlpatterns += [
+##url and view for artwork detail
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('artworks/', views.ArtworkListView.as_view(), name='artworks'),
     path('artists', views.artists, name='artists'),
+
+    # path('share_art/', views.share_art(), name='share_art')
 ]
