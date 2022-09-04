@@ -9,6 +9,9 @@ def index(request):
 def artists(request):
     return render(request, 'artists.html')
 
+def share_art(request):
+    return render(request,'share_art.html')
+
 # def share_art(request):
 #     return render(request, 'share_art.html')
 
@@ -24,3 +27,6 @@ class ArtworkListView(generic.ListView):
         # Create any data and add it to the context
         context['some_data'] = 'This is just some data'
         return context
+
+def Share_ArtView(request):
+    return render(request,'gallery/share_art.html');

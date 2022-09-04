@@ -1,9 +1,13 @@
-body {
+html,body {
+  height: 100%;
+  background: rgba(242, 237, 232, 1)
+}
+.nav-link {
+  color: #d5063f;
   font-family: "Sofia", sans-serif,Georgia, serif;
   font-size: 30px;
   text-shadow: 3px 3px 3px #ababab;
 }
-
 .card {
   margin: 0 0.5em;
   font-family: sans-serif;
@@ -13,7 +17,6 @@ body {
   font-size: 15px;
 }
 
-html,body {
-  height: 100%;
-  background: rgba(242, 237, 232, 1)
+.container {
+  border: 15px indigo dotted;
 }

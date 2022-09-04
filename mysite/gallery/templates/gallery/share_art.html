@@ -1,1 +1,31 @@
 {% extends "base_generic.html" %}
+
+{% block content%}
+<div class="container" >
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="input">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Add your Title ..">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="input">Artist</label>
+                    <input type="text" class="form-control" id="artist" placeholder="Add Artist Name ..">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="textbox">Summary</label>
+                <input type="text" class="form-control" id="summary" placeholder="Summary ..">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputState">Genere</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...Genere</option>
+                        <option>...</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+</div>
+{% endblock %}
