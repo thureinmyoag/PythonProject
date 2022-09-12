@@ -23,17 +23,19 @@
                 <div class="container-fluid">
                     <h1 class="text-fw-bold ">Art Gallery</h1 >
                     <ul class="navbar-nav">
-                    <li class="nav-item" ><a href="{% url 'index' %}" class="nav-link">Home |</a></li>
-                    <li class="nav-item"><a href="{% url 'artworks' %}" class="nav-link">All Artworks |</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Artists Portfolio |</a></li>
-                    <li class="nav-item"><a href="{% url 'shareart' %}" class="nav-link">Share Your Work</a></li>
+                    <li class="nav-item" ><a href="{% url 'index' %}" class="btn btn-outline-primary">Home </a></li>
+                    <li class="nav-item"><a href="{% url 'artworks' %}" class="btn btn-outline-primary">All Artworks </a></li>
+                    <li class="nav-item"><a href="#" class="btn btn-outline-primary">Artists Portfolio </a></li>
+                    <li class="nav-item"><a href="{% url 'shareart' %}" class="btn btn-outline-primary">Share Your Work</a></li>
                     <li></li>
                 </ul>
                 </div>   
             </nav>
             {% endblock %}
         </main>
-            <div class="col-12 ">{% block content %}{% endblock %}</div>
+            <div class="col-12 ">
+                {% block content %}{% endblock %}
+            </div>
 </body>
 
 </html>

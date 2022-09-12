@@ -28,5 +28,10 @@ class ArtworkListView(generic.ListView):
         context['some_data'] = 'This is just some data'
         return context
 
+def artwork_detail_view(request, primary_key):
+    # book = get_object_or_404(Book, pk=primary_key)
+    artwork = Artwork.objects.get(pk=primary_key)
+    return render(request, 'gallery/artwork_detail.html', context={'artwork': artwork })
+
 def Share_ArtView(request):
     return render(request,'gallery/share_art.html');

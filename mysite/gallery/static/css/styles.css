@@ -2,7 +2,7 @@ html,body {
   height: 100%;
   background: rgba(242, 237, 232, 1)
 }
-.nav-link {
+.btn-outline-primary {
   color: #d5063f;
   font-family: "Sofia", sans-serif,Georgia, serif;
   font-size: 30px;
@@ -17,6 +17,8 @@ html,body {
   font-size: 15px;
 }
 
-.container {
-  border: 15px indigo dotted;
+.share-form {
+  margin-top: 10px 10% auto;
+  padding: 20px 20px;
+  border: 15px double rgb(130, 0, 0) ;
 }
