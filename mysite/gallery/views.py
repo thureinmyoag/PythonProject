@@ -31,7 +31,6 @@ def artwork_detail_view(request, primary_key):
     # book = get_object_or_404(Book, pk=primary_key)
     artwork = Artwork.objects.get(pk=primary_key)
     return render(request, 'gallery/artwork_detail.html', context={'artwork': artwork })
-@csrf_exempt
 def Share_ArtView(request):
     if request.method == "POST":
         form = ShareArtForm(request.POST,request.FILES)
