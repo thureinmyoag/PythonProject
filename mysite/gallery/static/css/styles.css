@@ -1,9 +1,13 @@
-body {
+html,body {
+  height: 100%;
+  background: rgba(242, 237, 232, 1)
+}
+.btn-outline-primary {
+  color: #d5063f;
   font-family: "Sofia", sans-serif,Georgia, serif;
   font-size: 30px;
   text-shadow: 3px 3px 3px #ababab;
 }
-
 .card {
   margin: 0 0.5em;
   font-family: sans-serif;
@@ -13,7 +17,8 @@ body {
   font-size: 15px;
 }
 
-html,body {
-  height: 100%;
-  background: rgba(242, 237, 232, 1)
+.share-form {
+  margin-top: 10px 10% auto;
+  padding: 20px 20px;
+  border: 15px double rgb(130, 0, 0) ;
 }

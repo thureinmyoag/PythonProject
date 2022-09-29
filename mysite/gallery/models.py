@@ -1,29 +1,26 @@
 from django.db import models
+from django.urls import reverse # Used to generate URLs by reversing the URL patterns
 
 # Create your models here.
 class Genre(models.Model):
-    """Model representing a book genre."""
-    name = models.CharField(max_length=200, help_text='Enter an arts genre (e.g. painting)')
+    """Model representing a artwork genre."""
+    name = models.CharField(max_length=100, help_text='Enter an arts genre (e.g. painting)')
 
     def __str__(self):
         """String for representing the Model object."""
         return self.name
 
-from django.urls import reverse # Used to generate URLs by reversing the URL patterns
-
 class Artwork(models.Model):
-    """Model representing a book (but not a specific copy of a book)."""
-    title = models.CharField(max_length=200)
-
-    # Foreign Key used because book can only have one author, but authors can have multiple books
+    """Model representing a artwork (but not a specific copy of a artwork)."""
+    title = models.CharField(max_length=100)
+    
+    # Foreign Key used because artwork can only have one author, but artists can have multiple artworks
     # Author as a string rather than object because it hasn't been declared yet in the file
     artist = models.ForeignKey('Artist', on_delete=models.SET_NULL, null=True)
+    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the artwork')
+    image = models.ImageField(upload_to='images/', max_length=100)
 
-    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
-
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
-
-    # ManyToManyField used because genre can contain many books. Books can cover many genres.
+    # ManyToManyField used because genre contain many artworks. artworks can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this artwork')
 
@@ -32,11 +29,11 @@ class Artwork(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        """Returns the URL to access a detail record for this book."""
+        """Returns the URL to access a detail record for this artwork."""
         return reverse('artwork-detail', args=[str(self.id)])
 
 class Artist(models.Model):
-    """Model representing an author."""
+    """Model representing an artist."""
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
