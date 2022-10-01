@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Artwork,Artist,Genre
 from django.views import generic
 from django.http import HttpResponseRedirect, request
-## django import models
+
 # Create your views here.
 # from django.shortcuts import render
 from .forms import ShareArtForm
@@ -35,8 +35,10 @@ def Share_ArtView(request):
     if request.method == "POST":
         form = ShareArtForm(request.POST,request.FILES)
         if form.is_valid():
+            # return HttpResponseRedirect("/artworks")
             Artwork = form.save()
-    form = ShareArtForm()     
+    else:
+        form = ShareArtForm()     
     return render(request,'gallery/share_art.html', {"form": form});
 
 

@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+from django.forms.models import ModelForm
 
 # Create your models here.
 class Genre(models.Model):
@@ -49,5 +50,10 @@ class Artist(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return f'{self.last_name}, {self.first_name}'
+
+# class ShareArtForm(ModelForm):
+#     class Meta:
+#         model = Artwork
+#         fields = ('title','artist','image','summary','genre')
 
 
